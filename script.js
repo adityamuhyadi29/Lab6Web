@@ -9,3 +9,11 @@ const tombol = document.getElementById("tombolAksi");
 tombol.addEventListener("click", function() {
     pesan.textContent = "Tombol diklik pada " + new Date().toLocaleTimeString();
 });
+// Mengubah kelas dan gaya css
+const tombolGaya = document.getElementById("tombolGaya");
+const teksGaya = document.getElementById("teksGaya");
+
+tombolGaya.addEventListener("click", function () {
+    teksGaya.classList.toggle("highlight");
+    teksGaya.classList.toggle("teks-besar");
+});
