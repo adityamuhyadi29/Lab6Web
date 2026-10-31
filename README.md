@@ -145,3 +145,42 @@ form.reset() -> Mengosongkan form
 ![Hasil validasi](screenshot/ss5.png)
 
 ![HAsil Validasi](screenshot/ss6.png)
+
+### 6. To-do List
+
+Praktikum ini membuat aplikasi To-Do List (Daftar Tugas) sederhana menggunakan HTML, CSS, dan JavaScript DOM. Aplikasi ini digunakan untuk menambahkan tugas baru dan menandai tugas yang sudah selesai.
+2. Fungsi HTML
+HTML digunakan untuk membuat struktur halaman aplikasi.
+- <section>: Membuat bagian daftar tugas.
+- <h2>: Menampilkan judul Daftar Tugas.
+- <input>: Memasukkan tugas baru.
+- <button>: Menambahkan tugas.
+- <p>: Menampilkan pesan pemberitahuan.
+- <ul>: Menampilkan daftar tugas.
+3. Fungsi CSS
+CSS digunakan untuk mengatur tampilan aplikasi.
+- .selesai span: Memberikan efek coretan dan warna abu-abu pada tugas yang selesai.
+- li: Memberikan jarak bawah 8 piksel pada setiap daftar tugas.
+4. Fungsi JavaScript
+JavaScript digunakan untuk membuat aplikasi menjadi interaktif.
+- getElementById(): Mengambil elemen HTML berdasarkan ID.
+- addEventListener("click"): Mendeteksi klik tombol.
+- value.trim(): Mengambil teks input dan menghapus spasi di awal serta akhir.
+- createElement(): Membuat elemen HTML baru.
+- append(): Memasukkan teks dan tombol ke dalam elemen daftar.
+- appendChild(): Menambahkan tugas ke dalam daftar.
+- classList.toggle(): Menambahkan atau menghapus class selesai.
+- classList.contains(): Memeriksa status tugas.
+- focus(): Mengarahkan kursor kembali ke kolom input.
+5. Cara Kerja Program
+1. Pengguna memasukkan tugas pada kolom input.
+2. Menekan tombol Tambah untuk memasukkan tugas.
+3. Jika input kosong, program menampilkan pesan peringatan.
+4. Jika input terisi, tugas ditambahkan ke daftar.
+5. Pengguna menekan tombol Tandai selesai untuk mencoret tugas.
+6. Pengguna dapat membatalkan status selesai dengan menekan tombol tersebut kembali.
+
+### Result
+
+![Gambar 7](screenshot/ss7.png)
+![gambar 8](screenshot/ss8.png)
