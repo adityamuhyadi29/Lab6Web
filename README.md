@@ -186,3 +186,9 @@ JavaScript digunakan untuk membuat aplikasi menjadi interaktif.
 
 ![gambar 8](screenshot/ss8.png)
 
+
+### MINI PROJECT FORM PENDAFTARAN
+
+### Result
+
+![Gambar 9](screenshot/ss9.png)
