@@ -192,3 +192,27 @@ JavaScript digunakan untuk membuat aplikasi menjadi interaktif.
 ### Result
 
 ![Gambar 9](screenshot/ss9.png)
+
+### Ringkasan
+
+1. DOM (Document Object Model) adalah representasi struktur HTML dalam bentuk objek yang memungkinkan JavaScript mengakses dan mengubah isi, struktur, serta tampilan halaman web.
+
+2. Perbedaan getElementById(), querySelector(), dan querySelectorAll():
+- getElementById(): Memilih elemen berdasarkan ID.
+- querySelector(): Memilih elemen pertama berdasarkan selector CSS.
+- querySelectorAll(): Memilih semua elemen yang sesuai dengan selector CSS.
+3. addEventListener() berfungsi untuk menambahkan event atau aksi pada elemen HTML. Tiga contohnya:
+- click: Saat elemen diklik.
+- mouseover: Saat kursor diarahkan ke elemen.
+- submit: Saat form dikirim.
+4. event.preventDefault() digunakan untuk mencegah perilaku default browser saat form dikirim, sehingga JavaScript dapat memvalidasi data terlebih dahulu tanpa halaman langsung dimuat ulang.
+
+5. Perbedaan textContent dan innerHTML:
+- textContent: Mengubah atau mengambil teks saja, lebih aman karena tidak membaca HTML sebagai kode.
+- innerHTML: Mengubah atau mengambil isi HTML, tetapi berisiko terhadap serangan XSS jika menggunakan input yang tidak terpercaya.
+6. classList.toggle() berfungsi menambahkan class jika belum ada dan menghapusnya jika sudah ada. Contohnya untuk menampilkan atau menyembunyikan menu dan mengubah warna tombol.
+
+7. Tiga skenario pengujian validasi form:
+- Form dikirim dalam keadaan kosong.
+- Pengguna memasukkan format email yang salah.
+- Pengguna memasukkan password yang kurang dari jumlah karakter minimum.
