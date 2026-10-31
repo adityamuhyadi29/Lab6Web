@@ -36,8 +36,46 @@ const tombol = document.getElementById("tombolAksi");
 
 tombol.addEventListener("click", function() {
     pesan.textContent = "Tombol diklik pada " + new Date().toLocaleTimeString();
-});```
+}); 
+```
 
 ### Result
 
 ![HAsil Even Click](screenshot/ss2.png)
+
+### 3. Mengubah kelas dan gaya CSS
+
+Mengatur tampilan dan desain elemen HTML.
+Class yang digunakan:
+```css
+.highlight
+```
+Mengubah warna teks.
+Memberikan warna background.
+Menambahkan garis di sebelah kiri.
+Memberikan jarak dalam elemen menggunakan padding.
+
+```css
+.teks-besar
+```
+Memperbesar ukuran teks menjadi 1.4rem.
+
+JavaScript (script.js)
+
+Fungsi: Membuat halaman web menjadi interaktif.
+
+A. Mengakses elemen DOM
+Menggunakan document.getElementById() untuk mengambil elemen HTML berdasarkan ID.
+Menggunakan textContent untuk mengganti isi teks pada judul dan paragraf.
+
+C. Event Click
+
+Menggunakan addEventListener("click") untuk mendeteksi ketika tombol diklik.
+
+Ketika tombol diklik, program menampilkan waktu saat tombol ditekan menggunakan Date() dan toLocaleTimeString().
+
+D. Manipulasi Class CSS
+
+Menggunakan classList.toggle() untuk menambahkan atau menghapus class CSS secara bergantian ketika tombol diklik.
+
+![Gambar Perubahan teks](screenshot/ss3.png)
