@@ -17,3 +17,9 @@ tombolGaya.addEventListener("click", function () {
     teksGaya.classList.toggle("highlight");
     teksGaya.classList.toggle("teks-besar");
 });
+// Even input dan penghitung karakter
+const namaInput = document.getElementById("namaInput");
+const jumlahKarakter = document.getElementById("jumlahKarakter");
+namaInput.addEventListener("input", function () {
+    jumlahKarakter.textContent = namaInput.value.length;
+});
