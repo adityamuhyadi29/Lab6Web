@@ -12,3 +12,201 @@
 li { 
     margin-bottom: 8px; 
 }
+
+/*Style Mini Project*/
+
+/* Pengaturan dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eef2ff;
+    min-height: 100vh;
+    padding: 30px 15px;
+}
+
+/* Container utama */
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Card formulir */
+.form-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #3346a8;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* Form group */
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #526fe6;
+    box-shadow: 0 0 5px rgba(82,111,230,0.3);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+/* Pesan error */
+small {
+    display: block;
+    color: red;
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.invalid {
+    border-color: red;
+}
+
+/* Penghitung karakter */
+.counter {
+    text-align: right;
+    font-size: 12px;
+    color: #777;
+    margin-top: 5px;
+}
+
+/* Ringkasan */
+.summary {
+    background: #f1f4ff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.summary h3 {
+    color: #3346a8;
+    margin-bottom: 12px;
+}
+
+.summary p {
+    margin-bottom: 8px;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.summary span {
+    font-weight: bold;
+}
+
+/* Pesan sukses dan error */
+#message {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.success {
+    color: green;
+    background: #e4f8e9;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.error-message {
+    color: red;
+    background: #ffe5e5;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+/* Tombol */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    flex: 1;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-submit {
+    background: #526fe6;
+    color: white;
+}
+
+.btn-submit:hover {
+    background: #354bb5;
+}
+
+.btn-reset {
+    background: #ddd;
+    color: #333;
+}
+
+.btn-reset:hover {
+    background: #bbb;
+}
+
+/* Tampilan mobile */
+@media screen and (max-width: 480px) {
+    .form-card {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+}

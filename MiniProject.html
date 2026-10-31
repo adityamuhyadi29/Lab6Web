@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pendaftaran Workshop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-card">
+            <h1>Pendaftaran Workshop</h1>
+            <p class="subtitle"></p>
+            <form id="registrationForm">
+                <!---Input Nama-->
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap</label>
+                    <input type="text" id="nama" placeholder="Masukkan nama lengkap">
+                    <small id="namaEror"></small>
+                </div>
+
+                <!---Input email-->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" placeholder="Masukkan email">
+                    <small id="emailEror"></small>
+                </div>
+                <!---Pilih Sesi-->
+                <div class="form-group">
+                    <label for="sesi">Pilih Sesi Workshop</label>
+                    <select id="sesi">
+                        <option value="">--Pilih Sesi--</option>
+                        <option value="HTML dan CSS">HTML dan CSS</option>
+                        <option value="Javascript">Javascript</option>
+                        <option value="UI/UX Design">UI/UX Design</option>
+                    </select>
+                    <small id="sesiEror"></small>
+                </div>
+                <!---Catatan-->
+                <div class="form-group">
+                    <label for="catatan">Catatan</label>
+                    <textarea id="catatan" maxlength="250" placeholder="Tuliskan Catatan"></textarea>
+                    <div class="counter">
+                        <span id="charCount">0</span>/250 karakter
+                    </div>
+                </div>
+                <!---Ringkasan-->
+                <div class="summarry">
+                    <h3>Ringkasan pendaftaran</h3>
+                    <p>Nama:
+                        <span id="summaryNama">-</span>
+                    </p>
+                    <p>Email:
+                        <Span id="summaryEmail">-</Span>
+                    </p>
+                    <p>Sesi:
+                        <span id="summarySesi">-</span>
+                    </p>
+                </div>
+                <!---Pesan-->
+                <div id="message"></div>
+                <!---Tombol-->
+                <div class="button-group">
+                    <button type="submit" class="btn-submit">
+                        Daftar sekarang
+                    </button>
+                    <button type="reset" class="btn-reset">
+                        Reset
+                    </button>
+                </div>
+            </form>
+        </div>
+        <!---SCRIPT-->
+        <script src="script.js"></script>
+</body>
+</html>

@@ -1,76 +1,139 @@
-// Mengubah trks dengan DOM
-const judul = document.getElementById("judul");
-const pesan = document.getElementById("pesan");
-judul.textContent = "Saya Suka Belajar javascript DOM";
-pesan.textContent = "Konten berhasil di ubah oleh java script";
 
-// Event click
-const tombol = document.getElementById("tombolAksi");
-tombol.addEventListener("click", function() {
-    pesan.textContent = "Tombol diklik pada " + new Date().toLocaleTimeString();
-});
-// Mengubah kelas dan gaya css
-const tombolGaya = document.getElementById("tombolGaya");
-const teksGaya = document.getElementById("teksGaya");
+// Script Mini Project
+// Mengambil elemen HTML
+const form = document.getElementById("registrationForm");
 
-tombolGaya.addEventListener("click", function () {
-    teksGaya.classList.toggle("highlight");
-    teksGaya.classList.toggle("teks-besar");
+const nama = document.getElementById("nama");
+const email = document.getElementById("email");
+const sesi = document.getElementById("sesi");
+const catatan = document.getElementById("catatan");
+
+const namaError = document.getElementById("namaError");
+const emailError = document.getElementById("emailError");
+const sesiError = document.getElementById("sesiError");
+
+const message = document.getElementById("message");
+
+// Ringkasan input
+const summaryNama = document.getElementById("summaryNama");
+const summaryEmail = document.getElementById("summaryEmail");
+const summarySesi = document.getElementById("summarySesi");
+
+// Penghitung karakter
+const charCount = document.getElementById("charCount");
+
+
+// FUNGSI 1: Ringkasan input secara langsung
+function updateSummary() {
+    summaryNama.textContent = nama.value || "-";
+    summaryEmail.textContent = email.value || "-";
+    summarySesi.textContent = sesi.value || "-";
+}
+
+
+// FUNGSI 2: Penghitung karakter
+catatan.addEventListener("input", function() {
+    charCount.textContent = catatan.value.length;
 });
-// Even input dan penghitung karakter
-const namaInput = document.getElementById("namaInput");
-const jumlahKarakter = document.getElementById("jumlahKarakter");
-namaInput.addEventListener("input", function () {
-    jumlahKarakter.textContent = namaInput.value.length;
-});
-// VAlidasi Form PEndaftaran
-const form = document.getElementById("formPendaftaran");
-const pesanForm = document.getElementById("pesanForm");
-form.addEventListener("submit", function (event) {
+
+
+// Event input untuk memperbarui ringkasan
+nama.addEventListener("input", updateSummary);
+
+email.addEventListener("input", updateSummary);
+
+
+// Event change untuk pilihan sesi
+sesi.addEventListener("change", updateSummary);
+
+
+// FUNGSI 3: Validasi formulir
+form.addEventListener("submit", function(event) {
+
+    // Mencegah halaman refresh
     event.preventDefault();
-    const nama = document.getElementById("nama").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const usiaInput = document.getElementById("usia").value;
-    const usia = Number(usiaInput);
-    const polaEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (nama === "") {
-        pesanForm.textContent = "Nama wajib diisi.";
-    } else if (!polaEmail.test(email)) {
-        pesanForm.textContent = "Masukkan email yang valid.";
-    } else if (usiaInput === "" || !Number.isInteger(usia) || usia < 17 || usia > 100) {
-        pesanForm.textContent = "Usia harus berupa bilangan bulat 17–100.";
-    } else {
-        pesanForm.textContent = "Validasi berhasil. Form siap diproses.";
-        form.reset();
+    let valid = true;
+
+    // Menghapus pesan sebelumnya
+    namaError.textContent = "";
+    emailError.textContent = "";
+    sesiError.textContent = "";
+
+    nama.classList.remove("invalid");
+    email.classList.remove("invalid");
+    sesi.classList.remove("invalid");
+
+    message.textContent = "";
+    message.className = "";
+
+    // Validasi nama
+    if (nama.value.trim().length < 3) {
+        namaError.textContent =
+            "Nama harus diisi minimal 3 karakter.";
+
+        nama.classList.add("invalid");
+        valid = false;
     }
-    });
-// DAftar tugas sederhana
-const inputTugas = document.getElementById("inputTugas");
-const tambahTugas = document.getElementById("tambahTugas");
-const daftarTugas = document.getElementById("daftarTugas");
-const pesanTugas = document.getElementById("pesanTugas");
 
-tambahTugas.addEventListener("click", function () {
-    const teks = inputTugas.value.trim();
-    if (teks === "") {
-        pesanTugas.textContent = "Tulis tugas terlebih dahulu.";
+    // Validasi email
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(email.value.trim())) {
+        emailError.textContent =
+            "Masukkan alamat email yang valid.";
+
+        email.classList.add("invalid");
+        valid = false;
+    }
+
+    // Validasi sesi
+    if (sesi.value === "") {
+        sesiError.textContent =
+            "Silakan pilih sesi workshop.";
+
+        sesi.classList.add("invalid");
+        valid = false;
+    }
+
+    // Jika data tidak valid
+    if (!valid) {
+        message.textContent =
+            "Pendaftaran gagal! Silakan periksa kembali data Anda.";
+
+        message.classList.add("error-message");
         return;
     }
-    const item = document.createElement("li");
-    const label = document.createElement("span");
-    const selesai = document.createElement("button");
-    label.textContent = teks + " ";
-    selesai.type = "button";
-    selesai.textContent = "Tandai selesai";
-    selesai.addEventListener("click", function () {
-        item.classList.toggle("selesai");
-        selesai.textContent = item.classList.contains("selesai")
-        ? "Batalkan selesai" : "Tandai selesai";
-    });
-    item.append(label, selesai);
-    daftarTugas.appendChild(item);
-    inputTugas.value = "";
-    pesanTugas.textContent = "Tugas ditambahkan.";
-    inputTugas.focus();
+
+    // Jika data valid
+    message.textContent =
+        "Selamat! Pendaftaran workshop berhasil dilakukan.";
+
+    message.classList.add("success");
+
+});
+
+
+// FUNGSI 4: Tombol reset
+form.addEventListener("reset", function() {
+
+    setTimeout(function() {
+
+        namaError.textContent = "";
+        emailError.textContent = "";
+        sesiError.textContent = "";
+
+        nama.classList.remove("invalid");
+        email.classList.remove("invalid");
+        sesi.classList.remove("invalid");
+
+        message.textContent = "";
+        message.className = "";
+
+        charCount.textContent = "0";
+
+        updateSummary();
+
+    }, 0);
+
 });

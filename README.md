@@ -185,3 +185,4 @@ JavaScript digunakan untuk membuat aplikasi menjadi interaktif.
 ![Gambar 7](screenshot/ss7.png)
 
 ![gambar 8](screenshot/ss8.png)
+
