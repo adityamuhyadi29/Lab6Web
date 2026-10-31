@@ -78,4 +78,41 @@ D. Manipulasi Class CSS
 
 Menggunakan classList.toggle() untuk menambahkan atau menghapus class CSS secara bergantian ketika tombol diklik.
 
+### Result
+
 ![Gambar Perubahan teks](screenshot/ss3.png)
+
+### 4. Even Input dan Penghitung Karakter
+
+Menambahkan Even input yang di ketik akan otomatis menghitung jumlah karekter
+
+``html
+<input type="text" id="namaInput" maxlength="40">
+
+<p>Jumlah karakter: 
+    <span id="jumlahKarakter">0</span>
+</p>
+```
+Penjelasan:
+- input type="text": Membuat kolom untuk memasukkan teks.
+- id="namaInput": Identitas kolom input agar bisa diakses JavaScript.
+- maxlength="40": Membatasi input maksimal 40 karakter.
+- <p>: Menampilkan tulisan jumlah karakter.
+- <span id="jumlahKarakter">0</span>: Tempat menampilkan hasil hitungan karakter.
+
+```javascript
+const namaInput = document.getElementById("namaInput");
+const jumlahKarakter = document.getElementById("jumlahKarakter");
+
+namaInput.addEventListener("input", function () {
+    jumlahKarakter.textContent = namaInput.value.length;
+});
+```
+Penjelasan:
+namaInput.value: Mengambil teks yang diketik pengguna.
+.length: Menghitung jumlah karakter dalam teks.
+textContent: Menampilkan hasil hitungan ke HTML.
+
+### Result
+
+![Hasil penghitung karakter](screenshot/ss4.png)
