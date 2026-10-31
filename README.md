@@ -116,3 +116,32 @@ textContent: Menampilkan hasil hitungan ke HTML.
 ### Result
 
 ![Hasil penghitung karakter](screenshot/ss4.png)
+
+### 5. Validasi form pendaftaran
+
+JavaScript memeriksa data yang dimasukkan pengguna sebelum form diproses atau dikirim.
+
+Ada 3 data yang harus diperiksa:
+
+1. Nama lengkap wajib diisi.
+2. Email harus memiliki format yang valid.
+3. Usia harus berupa bilangan bulat antara 17 sampai 100 tahun.
+
+Kode dan Fungsi
+
+getElementById() -> Mengambil elemen HTML
+addEventListener("submit") -> Mendeteksi pengiriman form
+preventDefault() -> Mencegah form terkirim otomatis
+.value ->	Mengambil nilai input
+.trim() ->	Menghapus spasi awal dan akhir
+Number() -> Mengubah teks menjadi angka
+Regex.test() -> Memeriksa format email
+Number.isInteger() -> Memeriksa bilangan bulat
+textContent	Menampilkan pesan
+form.reset() -> Mengosongkan form
+
+### Result
+
+![Hasil validasi](screenshot/ss5.png)
+
+![HAsil Validasi](screenshot/ss6.png)
